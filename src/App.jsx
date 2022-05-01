@@ -7,43 +7,6 @@ import Spinner from "./Spinner";
 
 export default function App() {
 	const [size, setSize] = useState("");
-	const [products, setProducts] = useState([]);
-	const [error, setError] = useState(null);
-	const [loading, setLoading] = useState(true);
-
-	// useEffect(() => {
-	// 	getProducts("shoes")
-	// 		.then((response) => setProducts(response))
-	// 		.catch((e) => setError(e))
-	//Handling loading state//this is not a code
-	// 		.finally(() => setLoading(false));
-	// }, []);
-
-	//implementing Async/Await in useEffect
-	// useEffect(() => {
-	// 	async function init() {
-	// 		getProducts("shoes")
-	// 			.then((response) => setProducts(response))
-	// 			.catch((e) => setError(e))
-	// 			.finally(() => setLoading(false));
-	// 	}
-	// 	init(); //execute inner function
-	// }, []);
-
-	//implementing Async/Await in useEffect and try/catch for error handling
-	useEffect(() => {
-		async function init() {
-			try {
-				const response = await getProducts("shoes");
-				setProducts(response);
-			} catch (e) {
-				setError(e);
-			} finally {
-				setLoading(false);
-			}
-		}
-		init();
-	}, []);
 
 	function renderProduct(p) {
 		return (
