@@ -6,6 +6,7 @@ import Products from "./Products";
 import { Routes, Route } from "react-router-dom";
 import Detail from "./Detail";
 import Cart from "./Cart";
+import Checkout from "./Checkout";
 
 export default function App() {
 	//lifting state
@@ -64,6 +65,7 @@ export default function App() {
 							path="/cart"
 							element={<Cart cart={cart} updateQuantity={updateQuantity} />}
 						/>
+						<Route path="/checkout" element={<Checkout />} />
 					</Routes>
 				</main>
 			</div>
